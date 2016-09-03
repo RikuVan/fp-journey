@@ -2,16 +2,17 @@
   "name": "fp-journey",
   "version": "0.0.1",
   "description": "A journey into the land of fp",
-  "main": "dist/fp-journey.js",
-  "module": "dist/fp-journey.mjs",
-  "jsnext:main": "dist/fp-journey.mjs",
+  "main": "dist/fpjourney.js",
+  "module": "dist/fpjourney.mjs",
+  "jsnext:main": "dist/fpjourney.mjs",
   "scripts": {
     "prebuild": "eslint lib test",
-    "build": "rollup -c",
+    "build": "rimraf dist && rollup -c",
     "dev": "rollup -c -w",
     "pretest": "npm run build",
     "test": "mocha",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "play": "nodemon index.js -q -x 'clear && node'"
   },
   "author": "Richard Van Camp",
   "license": "ISC",
@@ -19,7 +20,10 @@
     "lib",
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "eyes": "^0.1.8",
+    "nodemon": "^1.10.2"
+  },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "babel-plugin-external-helpers": "^6.8.0",
@@ -29,6 +33,7 @@
     "eslint": "^3.4.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
+    "rimraf": "^2.5.4",
     "rollup": "^0.34.13",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-istanbul": "^1.0.0",
