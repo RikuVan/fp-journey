@@ -2,7 +2,7 @@
   "name": "fp-journey",
   "version": "0.0.1",
   "description": "A journey into the land of fp",
-  "main": "dist/rollup-starter-project.js",
+  "main": "dist/fp-journey.js",
   "module": "dist/fp-journey.mjs",
   "jsnext:main": "dist/fp-journey.mjs",
   "scripts": {
