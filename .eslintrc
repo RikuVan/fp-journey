@@ -1,6 +1,9 @@
 {
   "parser": "babel-eslint",
   "extends": "eslint:recommended",
+  "rules": {
+    "no-unused-vars": "off"
+  },
   "env": {
     "node": true,
     "mocha": true

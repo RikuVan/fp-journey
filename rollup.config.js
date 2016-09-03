@@ -18,7 +18,7 @@ export default {
     {
       dest: pkg['main'],
       format: 'umd',
-      moduleName: 'fp-journey',
+      moduleName: 'fpjourney',
       sourceMap: true
     },
     {
