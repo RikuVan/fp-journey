@@ -18,7 +18,8 @@
   "license": "ISC",
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "utils"
   ],
   "dependencies": {
     "eyes": "^0.1.8",
@@ -39,5 +40,8 @@
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-istanbul": "^1.0.0",
     "rollup-watch": "^2.5.0"
+  },
+  "peerDependencies": {
+    "fantasy-land": "*"
   }
 }

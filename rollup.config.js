@@ -13,6 +13,9 @@ export default {
       exclude: ['test/**/*', 'node_modules/**/*']
     })
   ],
+  globals: {
+    ramda: 'ramda'
+  },
   external: external,
   targets: [
     {
