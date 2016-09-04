@@ -1,4 +1,4 @@
-import {All, Any, Sum} from '../';
+import {All, Any, Sum, Product} from '../';
 import {strictEqual, throws} from 'assert';
 
 describe('All', () => {
@@ -56,5 +56,19 @@ describe('Sum', () => {
   it('3.concat(4) => 7', () => {
     strictEqual(Sum(3).concat(Sum(4)).value(), 7);
   });
+});
 
+describe('Product', () => {
+  it('1 => 1', () => {
+    strictEqual(Product(1).value(), 1);
+  });
+  it('empty() => 1', () => {
+    strictEqual(Product(0).empty().value(), 1);
+  });
+  it('string => TypeError', () => {
+    throws(() => Product(), TypeError);
+  });
+  it('3.concat(4) => 12', () => {
+    strictEqual(Product(3).concat(Product(4)).value(), 12);
+  });
 });
