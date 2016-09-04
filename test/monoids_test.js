@@ -20,6 +20,9 @@ describe('All', () => {
   it('empty() => true', () => {
     strictEqual(All(false).empty().value(), true);
   });
+  it('true.concatAll(false, true) => false', () => {
+    strictEqual(All(true).concatAll([All(false), All(true)]).value(), false);
+  });
 });
 
 describe('Any', () => {
@@ -41,6 +44,9 @@ describe('Any', () => {
   it('empty() => true', () => {
     strictEqual(Any(true).empty().value(), false);
   });
+  it('false.concatAll(true, false) => true', () => {
+    strictEqual(Any(false).concatAll([Any(true), Any(false)]).value(), true);
+  });
 });
 
 describe('Sum', () => {
@@ -56,6 +62,9 @@ describe('Sum', () => {
   it('3.concat(4) => 7', () => {
     strictEqual(Sum(3).concat(Sum(4)).value(), 7);
   });
+  it('2.concatAll(4,6,9) => 21', () => {
+    strictEqual(Sum(2).concatAll([Sum(4), Sum(6), Sum(9)]).value(), 21);
+  });
 });
 
 describe('Product', () => {
@@ -70,5 +79,8 @@ describe('Product', () => {
   });
   it('3.concat(4) => 12', () => {
     strictEqual(Product(3).concat(Product(4)).value(), 12);
+  });
+  it('2.concatAll(4, 6) => 48', () => {
+    strictEqual(Product(2).concatAll([Product(4), Product(6)]).value(), 48);
   });
 });
