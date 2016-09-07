@@ -1,4 +1,4 @@
-import {All, Any, Sum, Product, Max} from '../';
+import {All, Any, Sum, Product, Max, Min} from '../';
 import {strictEqual, throws} from 'assert';
 
 describe('All', () => {
@@ -100,5 +100,23 @@ describe('Max', () => {
   });
   it('2.concatAll(4, 1) => 4', () => {
     strictEqual(Max(2).concatAll([Max(4), Max(1)]).value(), 4);
+  });
+});
+
+describe('Min', () => {
+  it('1 => 1', () => {
+    strictEqual(Min(1).value(), 1);
+  });
+  it('empty() => Number.MIN_VALUE', () => {
+    strictEqual(Min(0).empty().value(), Number.MAX_VALUE);
+  });
+  it('string => TypeError', () => {
+    throws(() => Min(), TypeError);
+  });
+  it('5.concat(3) => 3', () => {
+    strictEqual(Min(5).concat(Min(3)).value(), 3);
+  });
+  it('2.concatAll(1, 4) => 1', () => {
+    strictEqual(Min(2).concatAll([Min(1), Min(4)]).value(), 1);
   });
 });
