@@ -22,6 +22,7 @@
     "utils"
   ],
   "dependencies": {
+    "daggy": "0.0.1",
     "eyes": "^0.1.8",
     "nodemon": "^1.10.2",
     "ramda": "^0.22.1"
@@ -32,6 +33,7 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-register": "^6.14.0",
     "babelrc-rollup": "^3.0.0",
+    "chai": "^3.5.0",
     "eslint": "^3.4.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
